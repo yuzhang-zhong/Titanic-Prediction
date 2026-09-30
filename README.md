@@ -14,6 +14,29 @@ This project implements a complete data science pipeline including:
 - Interactive Streamlit web application
 - Research report with figure placeholders
 
+## Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yuzhang-zhong/Titanic-Prediction.git
+cd Titanic-Prediction
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the full pipeline (preprocessing -> training -> clustering -> figures -> report)
+python src/00_data_prep.py
+python src/10_tree_classifier.py
+python src/20_survivor_clustering.py
+python src/30_reports.py
+python src/40_generate_report.py
+
+# 4. Launch the interactive web app
+streamlit run app/streamlit_app.py
+```
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for deployment notes (Python 3.13, Streamlit Cloud).
+
 ## Project Structure
 
 ```
@@ -137,6 +160,14 @@ This will launch a web interface with three tabs:
 
 All models meet the success criteria: **AUC ≥ 0.80, Accuracy ≥ 75%**
 
+![Model accuracy comparison](figures/model_accuracy_comparison.png)
+*Model evaluation*
+
+![Confusion matrices](figures/confusion_matrices.png)
+*Model evaluation*
+
+<!-- TODO: add screenshot -->
+
 ## Key Findings
 
 1. **Gender** is the most important survival factor (74.2% female survival vs. 18.9% male)
@@ -163,19 +194,19 @@ All models meet the success criteria: **AUC ≥ 0.80, Accuracy ≥ 75%**
 
 ## Dependencies
 
-- pandas >= 1.3.0
-- numpy >= 1.21.0
-- scikit-learn >= 1.0.0
-- matplotlib >= 3.4.0
-- seaborn >= 0.11.0
-- streamlit >= 1.10.0
-- scipy >= 1.7.0
+- pandas >= 2.2.3
+- numpy >= 1.26.0
+- scikit-learn >= 1.6.0
+- matplotlib >= 3.8.0
+- seaborn >= 0.13.0
+- streamlit >= 1.40.0
+- scipy >= 1.13.0
+- joblib >= 1.4.0
 
 ## License
 
-This project is for educational purposes only.
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
 ## Contact
 
-For questions or issues, please refer to the project documentation in `reports/Titanic_Report.md`.
-
+Questions or issues? Please open an issue on the [GitHub repository](https://github.com/yuzhang-zhong/Titanic-Prediction/issues), or reach the maintainer: [Yuzhang Zhong](https://github.com/yuzhang-zhong).
